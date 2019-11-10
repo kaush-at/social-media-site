@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+}
+
+#main-container {
+  background-color: #cce6ff;
+}
+#left-panel{
+  background-color: #339cff;
+  color : white;
+  text-align: center;
+  font-size: 15px;
+}
+#user-name {
+  background-color: #ffe6f2;
+}
+
+#community {
+  background-color: #ff0080;
+}
+
+#following{
+  background-color: #ff531a;
+}
+
+#followers{
+  background-color: #4d0000;
+}
