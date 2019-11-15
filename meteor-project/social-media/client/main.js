@@ -25,6 +25,13 @@ Template.postForm.events({
   },
 });
 
+Template.postList.events({
+  'click .follow-link': function(){
+
+    event.preventDefault();
+    Meteor.call("follow", this);
+  }
+})
 
 // Accounts.ui.config({
 //   requestPermissions: {

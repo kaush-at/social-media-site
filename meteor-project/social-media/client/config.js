@@ -20,5 +20,8 @@ Meteor.methods({
     var username = Meteor.user().username;
 
     Post.insert({content: content, created: new Date(),username : username});
+  },
+  follow: function(post){
+    console.log(post);
   }
 })
