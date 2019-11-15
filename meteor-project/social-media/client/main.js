@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Mongo } from 'meteor/mongo';
 import './main.html';
+import './config.js';
 
 Post = new Mongo.Collection('post')
 
@@ -16,26 +17,26 @@ Template.postForm.events({
     event.preventDefault();
     var content = document.getElementById('content').value;
 
-    //Meteor.call('addPost', content)
-    var username = Meteor.user().username;
-
-    Post.insert({content: content, created: new Date(),username : username});
+    Meteor.call('addPost', content)
+    // var username = Meteor.user().username;
+    //
+    // Post.insert({content: content, created: new Date(),username : username});
     event.target.reset();
   },
 });
 
 
-Accounts.ui.config({
-  requestPermissions: {
-    facebook: ['user_likes'],
-    github: ['user', 'repo']
-  },
-  requestOfflineToken: {
-    google: true
-  },
-  // passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
-  passwordSignupFields: 'USERNAME_ONLY'
-});
+// Accounts.ui.config({
+//   requestPermissions: {
+//     facebook: ['user_likes'],
+//     github: ['user', 'repo']
+//   },
+//   requestOfflineToken: {
+//     google: true
+//   },
+//   // passwordSignupFields: 'USERNAME_AND_OPTIONAL_EMAIL'
+//   passwordSignupFields: 'USERNAME_ONLY'
+// });
 
 // Meteor.methods({
 //   addPost : function(content){
