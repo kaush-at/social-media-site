@@ -1,25 +1,71 @@
 <head>
-  <title>social-media</title>
+  <meta charset="utf-8">
+  <title>social-media-site</title>
 </head>
 
 <body>
   <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
-  {{> info}}
+
+
+{{> loginButtons}}
+  <div id="main-container">
+    {{#if currentUser}}
+    <div id="left-panel">
+      <div id="user-name" class="side-box"><a>{{currentUser.username}}</a></div>
+
+      <div id="community" class="side-box"><a>Community</a></div>
+
+      <div id="following" class="side-box">
+        <a><h3>Following</h3></a>
+        <div class="box-content">
+          <div>exmaple user1</div>
+          <div>exmaple user2</div>
+          <div>exmaple user3</div>
+        </div>
+      </div>
+
+      <div id="followers" class="side-box">
+        <a><h3>Followers</h3></a>
+        <div class="box-content">
+          <div>exmaple user1</div>
+          <div>exmaple user2</div>
+          <div>exmaple user3</div>
+          <div>exmaple user3</div>
+          <div>exmaple user3</div>
+          <div>exmaple user3</div>
+        </div>
+      </div>
+
+    </div>
+    {{/if}}
+    <div id="right-panel">
+    {{#if currentUser}}
+      {{> postForm}}
+    {{/if}}
+      {{> postList}}
+    </div>
+
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+<template name="postList">
+  <ul class="class-posts" >
+      {{#each posts}}
+      <li class="post-list">
+        <div class="">{{content}}</div>
+        <div>{{username}}<a> Follow</a></div>
+      </li>
+      {{/each}}
   </ul>
 </template>
+
+<!-- {{#if currentUser}} -->
+<template name="postForm">
+  <form id="post-form">
+    <textarea id="content" rows="10" ></textarea>
+    <button type="submit" name="button">Post</button>
+  </form>
+</template>
+<!-- {{/if}} -->

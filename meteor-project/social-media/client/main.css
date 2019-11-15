@@ -1,4 +1,165 @@
 body {
-  padding: 10px;
-  font-family: sans-serif;
+  font-family: Arial;
+}
+
+#main-container {
+  background-color: white;
+  max-width: 1400px;
+  margin: 0px auto;
+}
+
+#main-container a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#left-panel{
+  background-color: white;
+  color : white;
+  text-align: center;
+  font-size: 15px;
+  width :28%;
+  float: left;
+  box-sizing: border-box;
+}
+
+#left-panel h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+
+}
+
+#left-panel > div{
+  margin: 5px 0px;
+  padding: 15px;
+  box-shadow: 2px 2px 4px #13001a ;
+   /* -webkit-transform: rotate(7deg); */
+}
+
+#right-panel{
+  width: 72%;
+  padding-left: 15px;
+  box-sizing: border-box;
+  float: left;
+}
+#user-name {
+  background-color: #bf00ff;
+}
+
+#community {
+  background-color: #ff0080;
+}
+
+#following{
+  background-color: #ff531a;
+}
+
+#followers{
+  background-color: #4d0000;
+}
+
+.class-posts {
+  background-color: white;
+  color: white;
+  padding :0px;
+  list-style: none;
+
+}
+
+#post-form{
+background-color: #d9d9d9;
+text-align: center;
+height: 150px;
+padding: 15px;
+margin : 5px;
+}
+
+#post-form textarea {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  resize:none;
+  box-sizing: border-box;
+}
+
+#post-form button {
+  background-color:#262626 ;
+  color: white;
+  width:100%;
+  height: 45px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  transition: all 0.2s;
+}
+
+#post-form button:hover {
+  background-color:  #000000;
+  cursor: pointer;
+  width:50%;
+}
+
+.post-list {
+  background-color: #0073e6;
+  margin : 15px;
+  padding: 5px;
+  height: 100px;
+  box-shadow: 2px 2px 4px #13001a ;
+}
+
+.post-list div:first-child{
+  margin-bottom: 15px;
+
+}
+
+.post-list div:nth-child(2){
+  margin-top:15px;
+  border-top:  1px solid white;
+  padding-top: 15px;
+}
+
+.post-list div:nth-child(2) a {
+  /* font-weight: bold */
+  /* display: block; */
+  font-weight: bold;
+  float: right;
+}
+
+@media(max-width:700px) {
+  #left-panel, #right-panel {
+    width:100%;
+    max-width: 100%;
+    padding-left: 0px;
+  }
+  .side-box{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin: 5px 0px;
+  }
+  .side-box:nth-child(even){
+    margin-left:3%;
+    width: 47%;
+  }
+  .box-content{
+    height: 60px;
+    margin-bottom: 5px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .side-box{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    margin: 5px 0px;
+  }
+  .side-box:nth-child(even){
+    width: 100%;
+  }
+  .box-content{
+    height: auto;
+  }
 }
